@@ -1,15 +1,15 @@
 #!/bin/sh
-# Name: IllusionChess
-# Author: Penguins184 (HackerDude)
+# Name: Hangman
+# Author: box-of-hats
 # DontUseFBInk
 
 #Based On ILLUSION, My Scriptlet For Creating Easy Mesquite Applications.
 #Credit To HackerDude For OG Source (Modified A Bit For Stuffs)
 
-SOURCE_DIR="/mnt/us/documents/illusionChess"
-TARGET_DIR="/var/local/mesquite/illusionChess"
+SOURCE_DIR="/mnt/us/documents/hangman"
+TARGET_DIR="/var/local/mesquite/hangman"
 DB="/var/local/appreg.db"
-APP_ID="xyz.penguins184.illusionchess"
+APP_ID="xyz.boxofhats.hangman"
 
 #Copy To VAR/LOCAL/MESQUITE
 if [ -d "$SOURCE_DIR" ]; then
