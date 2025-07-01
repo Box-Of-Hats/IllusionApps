@@ -3,40 +3,70 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IllusionChess</title>
+    <title>Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <link rel="stylesheet" href="css/chessboard.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
 </head>
 <body>
     <div class="container">
-        <h1 id="title">IllusionChess</h1>
+        <h1 id="title">Hangman</h1>
         <p id="log"></p>
         <div id="buttons">
-            <div id="mode">
-                <button id="ai">Against Robot</button>
-                <button id="human">Against Human</button>
-            </div>
-            <button id="reset">Clear Board</button>
+            <button id="reset">Restart</button>
         </div>
 
-        <div id="chessboard" style="width: 800px"></div>
+        <div id="word"></div>
+        
+        <input type="text" />
 
-        <div id="buttons">
-            <div id="difficulty">
-                <button id="easy">Easy Difficulty</button> <!-- Depth 1 -->
-                <button id="inter">Intermediate Difficulty</button> <!-- Depth 2 -->
-                <button id="hard">Hard Difficulty</button> <!-- Depth 3 -->
-                <!-- No Depth 4... WAY Too Long, Computationally Intensive -->
+        <div id="debug">...</div>    
+
+        <!-- Full screen is 1248x1648px -->
+        <div id="keyboard" style="width: 800px">
+            
+            <div class="row">
+                <button class="key" type="button">Q</button>
+                <button class="key" type="button">W</button>
+                <button class="key" type="button">E</button>
+                <button class="key" type="button">R</button>
+                <button class="key" type="button">T</button>
+                <button class="key" type="button">Y</button>
+                <button class="key" type="button">U</button>
+                <button class="key" type="button">I</button>
+                <button class="key" type="button">O</button>
+                <button class="key" type="button">P</button>
             </div>
+
+            <div class="row">
+                <button class="key" type="button">A</button>
+                <button class="key" type="button">S</button>
+                <button class="key" type="button">D</button>
+                <button class="key" type="button">F</button>
+                <button class="key" type="button">G</button>
+                <button class="key" type="button">H</button>
+                <button class="key" type="button">J</button>
+                <button class="key" type="button">K</button>
+                <button class="key" type="button">L</button>
+            </div>
+
+            <div class="row">
+                <button class="key" type="button">Z</button>
+                <button class="key" type="button">X</button>
+                <button class="key" type="button">C</button>
+                <button class="key" type="button">V</button>
+                <button class="key" type="button">B</button>
+                <button class="key" type="button">N</button>
+                <button class="key" type="button">M</button>
+            </div>
+
         </div>
+
+
     </div>
     
     <script src="js/polyfill.min.js"></script>
     <script src="js/jquery.js"></script> <!-- Transpiled To ES5 With Babel -->
-    <script src="js/chessboard.min.js"></script> <!-- Transpiled To ES5 With Babel -->
-    <script src="js/chess.js"></script> <!-- Transpiled To ES5 With Babel -->
     <script src="script.js"></script> <!-- Transpiled To ES5 With Babel -->
-    <!-- Stockfish Doesn't Work, JS-CHESS-ENGINE Has F'ed Up UMD... -->
 </body>
 </html>

@@ -36,16 +36,23 @@ button { /* Note To Self: You Physically Cannot Resize The Buttons */
     width: auto;
 }
 
-.move-dot {
-    width: 20px;
-    height: 20px;
-    border: 2px dashed black;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    box-sizing: border-box;
-    background: none;
+
+
+/*           */
+
+#word {
+    font-size: 32pt;
+}
+
+#keyboard {
+    font-size: 20pt;
+}
+
+.key {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.row {
+    
 }
