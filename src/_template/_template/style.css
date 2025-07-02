@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Libre Baskerville";
+    src: url(assets/libre-baskerville.ttf);
+}
+  
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Libre Baskerville", "Georgia", serif;
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 2px;
+}
+
+button {
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+    width: auto;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 8px;
+    margin: 8px 4px;
+}
