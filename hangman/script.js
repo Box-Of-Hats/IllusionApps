@@ -19,6 +19,7 @@ var allWords = ["docty", "aahed", "aalii", "aargh", "zygon", "zymes", "zymic", "
  * @property {HTMLElement} keyboard 
  * @property {HTMLElement} debug 
  * @property {HTMLButtonElement} reset 
+ * @property {HTMLElement} winCounter
  */
 
 var Hangman = {
@@ -29,7 +30,7 @@ var Hangman = {
     guesses: [],
 
     /** @type {number} */
-    lives: 5,
+    lives: 6,
 
     /** @type {DomNodes}  */
     dom: {
@@ -43,15 +44,22 @@ var Hangman = {
         debug: null,
 
         /**@type {HTMLElement} */
-        reset: null
+        reset: null,
+
+        /**@type {HTMLElement} */
+        winCounter: null
     },
+
+    /** @type {number} */
+    winStreak: 0,
 
     loadDomNodes: function () {
         this.dom = {
             word: document.getElementById("word"),
             keyboard: document.getElementById("keyboard"),
             debug: document.getElementById("debug"),
-            reset: document.getElementById("reset")
+            reset: document.getElementById("reset"),
+            winCounter: document.getElementById("win-counter")
         }
     },
 
@@ -88,7 +96,7 @@ var Hangman = {
             return;
         }
 
-        if (this.lives <= 0){
+        if (this.lives <= 0) {
             this.lose();
             return;
         }
@@ -99,13 +107,30 @@ var Hangman = {
             // Correct guess
             //TODO: implement check for win condition
             this.debug("Correct guess " + letter)
+
+
+            var didWin = true;
+            for (var index = 0; index < this.word.length; index++) {
+                var letter = this.word[index];
+
+                if (this.guesses.indexOf(letter) == -1) {
+                    // Word contains an unguessed letter
+                    didWin = false;
+                    break;
+                }
+            }
+
+
+            if (didWin) {
+                this.win()
+            }
         } else {
             // Incorrect guess
-            this.lives = this.lives -1;
-            //TODO: implement lose condition
+            this.lives = this.lives - 1;
+
             this.debug("Bad guess: " + letter + ". Lives: " + this.lives)
 
-            if (this.lives <= 0){
+            if (this.lives <= 0) {
                 this.lose()
             }
         }
@@ -126,11 +151,12 @@ var Hangman = {
         }
 
         this.dom.word.innerText = output;
+        this.dom.winCounter.innerText = this.winStreak;
     },
 
     restart: function () {
         this.word = allWords[getRandomInt(allWords.length - 1)].toUpperCase();
-        this.lives = 5;
+        this.lives = 6;
         this.guesses = [];
 
         // Re-enable keys
@@ -143,17 +169,23 @@ var Hangman = {
         }
 
         this.debug("Good luck!")
+        this.dom.reset.style.visibility = "hidden";
         this.draw();
     },
 
-    lose: function(){
+    lose: function () {
         this.debug("GAME OVER. TRY AGAIN")
-        this.guesses = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q","R","S","T","U","V","W","X","Y","Z"]
+        this.guesses = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        this.winStreak = 0;
         this.draw()
+        this.dom.reset.style.visibility = "visible";
+
     },
-    
-    win: function(){
+
+    win: function () {
+        this.winStreak = this.winStreak + 1;
         this.debug("You win!")
+        this.dom.reset.style.visibility = "visible";
     }
 }
 

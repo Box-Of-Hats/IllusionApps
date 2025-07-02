@@ -34,6 +34,10 @@ button { /* Note To Self: You Physically Cannot Resize The Buttons */
 
 /*           */
 
+#debug {
+    margin: 20px 0;
+}
+
 #word {
     font-size: 32pt;
 }
@@ -54,4 +58,11 @@ button { /* Note To Self: You Physically Cannot Resize The Buttons */
 
 .row {
 
+}
+
+#streak {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16pt;
 }
