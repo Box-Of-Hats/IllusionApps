@@ -147,7 +147,9 @@ var Hangman = {
     },
 
     lose: function(){
-        this.debug("GAME OVER")
+        this.debug("GAME OVER. TRY AGAIN")
+        this.guesses = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q","R","S","T","U","V","W","X","Y","Z"]
+        this.draw()
     },
     
     win: function(){
