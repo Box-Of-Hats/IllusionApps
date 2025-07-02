@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hangman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+</head>
+<body>
+    <div class="container">
+
+        <div id="streak">
+            <span>Streak: </span>
+            <span id="win-counter">0</span>
+        </div>
+
+        <h1 id="title">Hangman</h1>
+        <p id="log"></p>
+        <div id="buttons">
+            <button id="reset" style="visibility: hidden;">Restart</button>
+        </div>
+
+        <div id="word"></div>
+        
+        <div id="debug">...</div>    
+
+        <!-- Full screen is 1248x1648px -->
+        <div id="keyboard" style="width: 1100px">
+            
+            <div class="row">
+                <button class="key" type="button">Q</button>
+                <button class="key" type="button">W</button>
+                <button class="key" type="button">E</button>
+                <button class="key" type="button">R</button>
+                <button class="key" type="button">T</button>
+                <button class="key" type="button">Y</button>
+                <button class="key" type="button">U</button>
+                <button class="key" type="button">I</button>
+                <button class="key" type="button">O</button>
+                <button class="key" type="button">P</button>
+            </div>
+
+            <div class="row">
+                <button class="key" type="button">A</button>
+                <button class="key" type="button">S</button>
+                <button class="key" type="button">D</button>
+                <button class="key" type="button">F</button>
+                <button class="key" type="button">G</button>
+                <button class="key" type="button">H</button>
+                <button class="key" type="button">J</button>
+                <button class="key" type="button">K</button>
+                <button class="key" type="button">L</button>
+            </div>
+
+            <div class="row">
+                <button class="key" type="button">Z</button>
+                <button class="key" type="button">X</button>
+                <button class="key" type="button">C</button>
+                <button class="key" type="button">V</button>
+                <button class="key" type="button">B</button>
+                <button class="key" type="button">N</button>
+                <button class="key" type="button">M</button>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/jquery.js"></script> <!-- Transpiled To ES5 With Babel -->
+    <script src="script.js"></script> <!-- Transpiled To ES5 With Babel -->
+</body>
+</html>

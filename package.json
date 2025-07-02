@@ -1,0 +1,26 @@
+{
+  "name": "k-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx babel src --out-dir output --copy-files --delete-dir-on-start --extensions \".ts,.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Box-Of-Hats/IllusionApps.git"
+  },
+  "keywords": [],
+  "author": "box-of-hats",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Box-Of-Hats/IllusionApps/issues"
+  },
+  "homepage": "https://github.com/Box-Of-Hats/IllusionApps#readme",
+  "dependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1"
+  }
+}
