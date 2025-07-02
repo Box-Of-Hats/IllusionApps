@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx babel src --out-dir output --copy-files --delete-dir-on-start --extensions \".ts,.js\""
+    "build": "npx babel src --out-dir output --copy-files --delete-dir-on-start --extensions \".ts,.js\"",
+    "watch": "npx babel src --out-dir output --copy-files --delete-dir-on-start --extensions \".ts,.js\" --watch"
   },
   "repository": {
     "type": "git",

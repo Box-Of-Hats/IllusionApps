@@ -1,3 +1,9 @@
+## Debugging locally
+
+1. Run the watch task using `npm run watch`
+2. Start a server in the output directory. It's recommended to use the [Live Server extension](https://marketplace.visualstudio.com/items/?itemName=ritwickdey.LiveServer) in VSCode.
+3. In a browser, navigate to the project you're working on
+
 ## Building apps
 
 To build all apps, use `npm run build` which will build all apps in the `src/` directory. 
